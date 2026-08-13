@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Iron District Fitness - Premium strength, conditioning and fitness.">
+
+<title>Iron District Fitness | Train Different</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #fff;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --red: #e21b23;
+    --red-light: #ff3038;
+    --black: #080808;
+    --dark: #111;
+    --dark-2: #181818;
+    --gray: #999;
+    --border: #292929;
+    --white: #fff;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 12px 0;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.section-title p {
+    color: var(--gray);
+    max-width: 620px;
+    margin: auto;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: var(--red);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--red);
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--red-light);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #111;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5,5,5,.95);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    min-height: 78px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.logo small {
+    display: block;
+
+    color: #777;
+
+    font-size: 7px;
+    letter-spacing: 4px;
+
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ccc;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.85)
+        ),
+
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 720px;
+
+    padding-top: 70px;
+}
+
+.hero-label {
+    color: var(--red);
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(58px, 9vw, 105px);
+
+    line-height: .9;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    color: #ccc;
+
+    font-size: 18px;
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    background: var(--red);
+
+    padding: 35px 0;
+}
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 34px;
+
+    font-weight: 900;
+}
+
+.stat p {
+    text-transform: uppercase;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: var(--black);
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.about-image {
+    height: 520px;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.15)
+        ),
+
+        url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+
+    border: 1px solid var(--red);
+}
+
+.about-text h2 {
+    font-size: 46px;
+
+    line-height: 1.05;
+
+    margin-bottom: 22px;
+
+    text-transform: uppercase;
+}
+
+.about-text h2 span {
+    color: var(--red);
+}
+
+.about-text p {
+    color: #999;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   PROGRAMS
+========================= */
+
+.programs {
+    background: var(--dark);
+}
+
+.program-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.program {
+    background: var(--dark-2);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.program:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--red);
+}
+
+.program-image {
+    height: 240px;
+}
+
+.program-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.program-content {
+    padding: 28px;
+}
+
+.program-content h3 {
+    font-size: 24px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.program-content p {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.program-link {
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MEMBERSHIP
+========================= */
+
+.membership {
+    background: var(--black);
+}
+
+.membership-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.plan {
+    background: var(--dark-2);
+
+    border: 1px solid var(--border);
+
+    padding: 38px 28px;
+
+    position: relative;
+}
+
+.plan.featured {
+    border: 2px solid var(--red);
+
+    transform: translateY(-10px);
+}
+
+.popular {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: var(--red);
+
+    text-align: center;
+
+    padding: 7px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.plan.featured .plan-title {
+    margin-top: 25px;
+}
+
+.plan-title {
+    text-transform: uppercase;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+.plan-price {
+    font-size: 45px;
+
+    font-weight: 900;
+
+    margin: 12px 0;
+}
+
+.plan-price span {
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: normal;
+}
+
+.plan ul {
+    list-style: none;
+
+    margin: 25px 0;
+}
+
+.plan li {
+    color: #aaa;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #252525;
+}
+
+.plan li::before {
+    content: "✓";
+
+    color: var(--red);
+
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+
+/* =========================
+   TRAINERS
+========================= */
+
+.trainers {
+    background: var(--dark);
+}
+
+.trainer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.trainer {
+    background: var(--dark-2);
+
+    border: 1px solid var(--border);
+}
+
+.trainer-image {
+    height: 360px;
+}
+
+.trainer-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.trainer-info {
+    padding: 25px;
+}
+
+.trainer-info h3 {
+    font-size: 24px;
+
+    text-transform: uppercase;
+}
+
+.trainer-info span {
+    color: var(--red);
+
+    text-transform: uppercase;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.trainer-info p {
+    color: #777;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: var(--black);
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 300px;
+
+    overflow: hidden;
+}
+
+.gallery-item img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews {
+    background: var(--dark);
+}
+
+.review-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.review {
+    background: var(--dark-2);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+}
+
+.stars {
+    color: var(--red);
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.review p {
+    color: #aaa;
+
+    font-style: italic;
+
+    margin-bottom: 18px;
+}
+
+.review strong {
+    font-size: 13px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    background:
+
+        linear-gradient(
+            rgba(226,27,35,.86),
+            rgba(226,27,35,.86)
+        ),
+
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 55px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    line-height: 1;
+}
+
+.cta p {
+    max-width: 600px;
+
+    margin: 20px auto 30px;
+}
+
+.cta .btn {
+    background: white;
+
+    border-color: white;
+
+    color: #111;
+}
+
+.cta .btn:hover {
+    background: #111;
+
+    border-color: #111;
+
+    color: white;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: var(--black);
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.contact-card {
+    background: var(--dark-2);
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+
+    padding: 35px;
+}
+
+.contact-icon {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.contact-card h3 {
+    color: var(--red);
+
+    text-transform: uppercase;
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #888;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 27px;
+
+    z-index: 2000;
+
+    transition: .3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050505;
+
+    padding: 55px 0 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 45px;
+
+    margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 27px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.footer-brand h2 span {
+    color: var(--red);
+}
+
+.footer-brand p {
+    color: #666;
+
+    max-width: 400px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+
+    text-transform: uppercase;
+
+    font-size: 14px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #666;
+
+    margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+    color: var(--red);
+}
+
+.copyright {
+    border-top: 1px solid var(--border);
+
+    padding-top: 22px;
+
+    text-align: center;
+
+    color: #444;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 78px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #111;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+
+        padding: 14px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-grid,
+    .membership-grid,
+    .trainer-grid,
+    .review-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plan.featured {
+        transform: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 320px;
+    }
+
+    .cta h2 {
+        font-size: 40px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+<div class="container navbar">
+
+<a href="#home" class="logo">
+
+IRON <span>DISTRICT</span>
+
+<small>
+FITNESS & PERFORMANCE
+</small>
+
+</a>
+
+
+<button
+class="menu-toggle"
+id="menuToggle"
+>
+☰
+</button>
+
+
+<ul
+class="nav-links"
+id="navLinks"
+>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#programs">Programs</a>
+</li>
+
+<li>
+<a href="#membership">Membership</a>
+</li>
+
+<li>
+<a href="#trainers">Trainers</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+class="hero"
+id="home"
+>
+
+<div class="container hero-content">
+
+<div class="hero-label">
+Train Hard. Train Smart.
+</div>
+
+<h1>
+
+Built
+<br>
+
+<span>Different.</span>
+
+</h1>
+
+<p>
+
+A serious training environment for people
+who want to become stronger, fitter and
+more capable.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#membership"
+class="btn"
+>
+View Membership
+</a>
+
+<a
+href="#programs"
+class="btn btn-outline"
+>
+Explore Programs
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+
+<div class="stat">
+
+<h3>
+5+
+</h3>
+
+<p>
+Years Strong
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+2,500+
+</h3>
+
+<p>
+Members
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+18
+</h3>
+
+<p>
+Expert Coaches
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+24/7
+</h3>
+
+<p>
+Gym Access
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+class="section about"
+id="about"
+>
+
+<div class="container about-grid">
+
+
+<div class="about-image"></div>
+
+
+<div class="about-text">
+
+<div
+class="section-title"
+style="text-align:left;margin-bottom:25px;"
+>
+
+<span>
+About Iron District
+</span>
+
+<h2>
+
+More Than
+<span>A Gym.</span>
+
+</h2>
+
+</div>
+
+
+<p>
+
+Iron District Fitness is built around one
+simple idea: your training environment
+matters.
+
+</p>
+
+
+<p>
+
+We combine serious equipment, experienced
+coaches and a community that pushes you
+to keep moving forward.
+
+</p>
+
+
+<p>
+
+Whether your goal is strength, conditioning,
+fat loss, athletic performance or simply
+becoming healthier, we have a place for you.
+
+</p>
+
+
+<a
+href="#membership"
+class="btn"
+>
+
+Join The District
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROGRAMS
+========================= -->
+
+<section
+class="section programs"
+id="programs"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+Train Your Way
+</span>
+
+<h2>
+Programs
+</h2>
+
+<p>
+Structured training for different goals,
+experience levels and lifestyles.
+</p>
+
+</div>
+
+
+<div class="program-grid">
+
+
+<div class="program">
+
+<div class="program-image">
+
+<img
+src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85"
+alt="Strength training"
+>
+
+</div>
+
+<div class="program-content">
+
+<h3>
+Strength
+</h3>
+
+<p>
+Build raw strength with progressive
+resistance training and expert coaching.
+</p>
+
+<a
+href="#membership"
+class="program-link"
+>
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="program">
+
+<div class="program-image">
+
+<img
+src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85"
+alt="Fitness training"
+>
+
+</div>
+
+<div class="program-content">
+
+<h3>
+Conditioning
+</h3>
+
+<p>
+Improve endurance, work capacity and
+overall athletic performance.
+</p>
+
+<a
+href="#membership"
+class="program-link"
+>
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="program">
+
+<div class="program-image">
+
+<img
+src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+alt="Group training"
+>
+
+</div>
+
+<div class="program-content">
+
+<h3>
+Group Training
+</h3>
+
+<p>
+High-energy sessions designed to keep
+you motivated and accountable.
+</p>
+
+<a
+href="#membership"
+class="program-link"
+>
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MEMBERSHIP
+========================= -->
+
+<section
+class="section membership"
+id="membership"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+Choose Your Level
+</span>
+
+<h2>
+Membership
+</h2>
+
+<p>
+Simple plans. No confusing packages.
+</p>
+
+</div>
+
+
+<div class="membership-grid">
+
+
+<div class="plan">
+
+<div class="plan-title">
+Basic
+</div>
+
+<div class="plan-price">
+$29
+<span>/month</span>
+</div>
+
+<ul>
+
+<li>
+Gym access
+</li>
+
+<li>
+Locker facilities
+</li>
+
+<li>
+Free fitness assessment
+</li>
+
+<li>
+Community access
+</li>
+
+</ul>
+
+<a
+href="#contact"
+class="btn btn-outline"
+>
+Get Started
+</a>
+
+</div>
+
+
+<div class="plan featured">
+
+<div class="popular">
+Most Popular
+</div>
+
+<div class="plan-title">
+Performance
+</div>
+
+<div class="plan-price">
+$49
+<span>/month</span>
+</div>
+
+<ul>
+
+<li>
+24/7 gym access
+</li>
+
+<li>
+All group classes
+</li>
+
+<li>
+Monthly coaching session
+</li>
+
+<li>
+Personal training discount
+</li>
+
+</ul>
+
+<a
+href="#contact"
+class="btn"
+>
+Join Now
+</a>
+
+</div>
+
+
+<div class="plan">
+
+<div class="plan-title">
+Elite
+</div>
+
+<div class="plan-price">
+$89
+<span>/month</span>
+</div>
+
+<ul>
+
+<li>
+Everything in Performance
+</li>
+
+<li>
+Weekly coaching
+</li>
+
+<li>
+Nutrition guidance
+</li>
+
+<li>
+Priority booking
+</li>
+
+</ul>
+
+<a
+href="#contact"
+class="btn btn-outline"
+>
+Go Elite
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TRAINERS
+========================= -->
+
+<section
+class="section trainers"
+id="trainers"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+The Coaches
+</span>
+
+<h2>
+Meet The Team
+</h2>
+
+<p>
+Experienced coaches who care about
+your progress.
+</p>
+
+</div>
+
+
+<div class="trainer-grid">
+
+
+<div class="trainer">
+
+<div class="trainer-image">
+
+<img
+src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=85"
+alt="Fitness coach"
+>
+
+</div>
+
+<div class="trainer-info">
+
+<h3>
+Marcus
+</h3>
+
+<span>
+Strength Coach
+</span>
+
+<p>
+Specialist in strength development
+and performance training.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="trainer">
+
+<div class="trainer-image">
+
+<img
+src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+alt="Fitness coach"
+>
+
+</div>
+
+<div class="trainer-info">
+
+<h3>
+Sarah
+</h3>
+
+<span>
+Conditioning Coach
+</span>
+
+<p>
+Focused on endurance, mobility and
+athletic conditioning.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="trainer">
+
+<div class="trainer-image">
+
+<img
+src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85"
+alt="Personal trainer"
+>
+
+</div>
+
+<div class="trainer-info">
+
+<h3>
+Daniel
+</h3>
+
+<span>
+Performance Coach
+</span>
+
+<p>
+Helping members train smarter and
+perform at their best.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section
+class="section gallery"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+Inside The District
+</span>
+
+<h2>
+The Environment
+</h2>
+
+</div>
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+alt="Gym interior"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=85"
+alt="Gym equipment"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85"
+alt="Training"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85"
+alt="Strength training"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85"
+alt="Workout"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85"
+alt="Fitness gym"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="section reviews">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+Member Results
+</span>
+
+<h2>
+What They Say
+</h2>
+
+</div>
+
+
+<div class="review-grid">
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Best gym environment I've trained
+in. The coaches actually care about
+your progress."
+</p>
+
+<strong>
+— Alex M.
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"The equipment is excellent and
+the atmosphere keeps me motivated
+every single week."
+</p>
+
+<strong>
+— Jordan T.
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"I finally found a gym where I
+actually enjoy showing up."
+</p>
+
+<strong>
+— Chris R.
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="section cta">
+
+<div class="container">
+
+<h2>
+Ready To Train?
+</h2>
+
+<p>
+Stop waiting for the perfect time.
+Start building something stronger today.
+</p>
+
+<a
+href="#contact"
+class="btn"
+>
+Start Your Membership
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="section contact"
+id="contact"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+Visit Us
+</span>
+
+<h2>
+Find The District
+</h2>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📍
+</div>
+
+<h3>
+Location
+</h3>
+
+<p>
+25 Main Street<br>
+Downtown District
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📞
+</div>
+
+<h3>
+Phone
+</h3>
+
+<p>
++1 234 567 8900
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-icon">
+🕐
+</div>
+
+<h3>
+Opening Hours
+</h3>
+
+<p>
+Monday - Sunday<br>
+Open 24 Hours
+</p>
+
+</div>
+
+
+</div>
+
+
+<div style="
+text-align:center;
+margin-top:40px;
+">
+
+<a
+href="https://maps.google.com"
+target="_blank"
+class="btn"
+>
+Get Directions
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+<h2>
+IRON <span>DISTRICT</span>
+</h2>
+
+<p>
+A modern training facility built
+for strength, performance and
+long-term progress.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Explore
+</h3>
+
+<a href="#about">
+About
+</a>
+
+<a href="#programs">
+Programs
+</a>
+
+<a href="#membership">
+Membership
+</a>
+
+<a href="#trainers">
+Trainers
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Contact
+</h3>
+
+<a href="tel:+12345678900">
++1 234 567 8900
+</a>
+
+<a href="mailto:hello@irondistrict.example">
+hello@irondistrict.example
+</a>
+
+<a href="#contact">
+Find Us
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© <span id="year"></span>
+Iron District Fitness.
+Demo website created for portfolio purposes.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+href="https://wa.me/12345678900"
+target="_blank"
+class="whatsapp"
+aria-label="WhatsApp"
+>
+☎
+</a>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuToggle.addEventListener(
+"click",
+function() {
+
+navLinks.classList.toggle("active");
+
+}
+);
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link) {
+
+link.addEventListener(
+"click",
+function() {
+
+navLinks.classList.remove("active");
+
+}
+);
+
+});
+
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+</script>
+
+
+</body>
+
+</html>
+
+

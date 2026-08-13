@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="The Gentlemen's Cut - Premium barbering and grooming.">
+
+<title>The Gentlemen's Cut | Barber Shop</title>
+
+<style>
+
+/* ==============================
+   RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* ==============================
+   COLORS
+============================== */
+
+:root {
+    --gold: #c9a45c;
+    --gold-light: #e2c27d;
+    --black: #0b0b0b;
+    --dark: #111;
+    --dark-2: #181818;
+    --gray: #999;
+    --white: #fff;
+    --border: #292929;
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 46px;
+    margin: 12px 0;
+}
+
+.section-title p {
+    color: var(--gray);
+    max-width: 600px;
+    margin: auto;
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--gold);
+    color: #111;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--gold);
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+}
+
+.btn-outline:hover {
+    color: #111;
+}
+
+
+/* ==============================
+   NAVBAR
+============================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5,5,5,.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.logo small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 7px;
+    letter-spacing: 3px;
+    color: #777;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ccc;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.8)
+        ),
+        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+    padding-top: 70px;
+}
+
+.hero-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 8vw, 95px);
+    line-height: .95;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 18px;
+    max-width: 580px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ==============================
+   ABOUT
+============================== */
+
+.about {
+    background: var(--black);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.about-image {
+    height: 520px;
+
+    background:
+        url("https://images.unsplash.com/photo-1512690459411-b0fd4c4d1c6a?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+
+    border: 1px solid var(--gold);
+}
+
+.about-text h2 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.about-text h2 span {
+    color: var(--gold);
+}
+
+.about-text p {
+    color: #999;
+    margin-bottom: 18px;
+}
+
+
+/* ==============================
+   SERVICES
+============================== */
+
+.services {
+    background: var(--dark);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    padding: 35px 25px;
+    text-align: center;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.service-price {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ==============================
+   PRICING
+============================== */
+
+.pricing {
+    background: var(--black);
+}
+
+.price-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.price-row h3 {
+    font-size: 17px;
+}
+
+.price-row p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.price {
+    color: var(--gold);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+/* ==============================
+   GALLERY
+============================== */
+
+.gallery {
+    background: var(--dark);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 330px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ==============================
+   BARBERS
+============================== */
+
+.team {
+    background: var(--black);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.barber {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.barber-image {
+    height: 330px;
+}
+
+.barber-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.barber-info {
+    padding: 25px;
+}
+
+.barber-info h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.barber-info span {
+    color: var(--gold);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.barber-info p {
+    color: #777;
+    margin-top: 10px;
+}
+
+
+/* ==============================
+   REVIEWS
+============================== */
+
+.reviews {
+    background: var(--dark);
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review {
+    background: var(--dark-2);
+    padding: 30px;
+    border: 1px solid var(--border);
+}
+
+.stars {
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.review p {
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.review strong {
+    color: white;
+}
+
+
+/* ==============================
+   BOOKING
+============================== */
+
+.booking {
+    background:
+        linear-gradient(
+            rgba(0,0,0,.83),
+            rgba(0,0,0,.83)
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.booking-box {
+    max-width: 850px;
+    margin: auto;
+    background: rgba(15,15,15,.94);
+    border: 1px solid rgba(201,164,92,.4);
+    padding: 45px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #aaa;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select {
+    background: #202020;
+    color: white;
+    border: 1px solid #333;
+    padding: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--gold);
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 25px;
+}
+
+
+/* ==============================
+   CONTACT
+============================== */
+
+.contact {
+    background: var(--black);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.contact-card {
+    text-align: center;
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    padding: 35px;
+}
+
+.contact-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact-card h3 {
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #888;
+}
+
+
+/* ==============================
+   WHATSAPP
+============================== */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.5);
+
+    transition: .3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background: #060606;
+    padding: 55px 0 25px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 45px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    color: #666;
+    max-width: 400px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    text-align: center;
+    color: #444;
+    font-size: 12px;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+
+        background: #111;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid,
+    .team-grid,
+    .review-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+
+    .booking-box {
+        padding: 25px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
+<header>
+
+<div class="container navbar">
+
+<a href="#home" class="logo">
+
+THE GENTLEMEN'S CUT
+
+<small>
+PREMIUM BARBERING
+</small>
+
+</a>
+
+
+<button
+    class="menu-toggle"
+    id="menuToggle"
+>
+☰
+</button>
+
+
+<ul
+    class="nav-links"
+    id="navLinks"
+>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#services">Services</a>
+</li>
+
+<li>
+<a href="#gallery">Gallery</a>
+</li>
+
+<li>
+<a href="#team">Barbers</a>
+</li>
+
+<li>
+<a href="#booking">Book</a>
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+<div class="container hero-content">
+
+<div class="hero-label">
+Classic Craft. Modern Style.
+</div>
+
+<h1>
+Look Sharp.
+<br>
+<span>Stay Sharp.</span>
+</h1>
+
+<p>
+Premium barbering for men who care about
+the details. Precision cuts, traditional
+techniques and a modern atmosphere.
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+    href="#booking"
+    class="btn"
+>
+Book Appointment
+</a>
+
+<a
+    href="#services"
+    class="btn btn-outline"
+>
+View Services
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     ABOUT
+============================== -->
+
+<section
+    class="section about"
+    id="about"
+>
+
+<div class="container about-grid">
+
+
+<div class="about-image"></div>
+
+
+<div class="about-text">
+
+<div class="section-title"
+     style="text-align:left;margin-bottom:25px;">
+
+<span>
+Our Story
+</span>
+
+<h2>
+Built on
+<span>Craft.</span>
+</h2>
+
+</div>
+
+
+<p>
+The Gentlemen's Cut was built for people
+who appreciate quality grooming and
+old-school barbering with a modern edge.
+</p>
+
+<p>
+Every cut is tailored to the individual.
+From classic fades to clean scissor cuts,
+our barbers focus on precision, detail
+and consistency.
+</p>
+
+<p>
+Sit back, relax and let us take care
+of the rest.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     SERVICES
+============================== -->
+
+<section
+    class="section services"
+    id="services"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+What We Do
+</span>
+
+<h2>
+Our Services
+</h2>
+
+<p>
+Professional grooming designed around
+your style.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+✂️
+</div>
+
+<h3>
+Classic Haircut
+</h3>
+
+<p>
+Precision cut, styling and finishing.
+</p>
+
+<div class="service-price">
+$25
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+💈
+</div>
+
+<h3>
+Skin Fade
+</h3>
+
+<p>
+Clean fade with detailed finishing.
+</p>
+
+<div class="service-price">
+$30
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🪒
+</div>
+
+<h3>
+Beard Grooming
+</h3>
+
+<p>
+Shape, trim and professional finish.
+</p>
+
+<div class="service-price">
+$18
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     PRICE LIST
+============================== -->
+
+<section class="section pricing">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+Simple Pricing
+</span>
+
+<h2>
+The Menu
+</h2>
+
+</div>
+
+
+<div class="price-list">
+
+
+<div class="price-row">
+
+<div>
+
+<h3>
+Haircut & Style
+</h3>
+
+<p>
+Consultation, cut and styling.
+</p>
+
+</div>
+
+<span class="price">
+$25
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<div>
+
+<h3>
+Skin Fade
+</h3>
+
+<p>
+Precision fade and finishing.
+</p>
+
+</div>
+
+<span class="price">
+$30
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<div>
+
+<h3>
+Haircut + Beard
+</h3>
+
+<p>
+Complete grooming package.
+</p>
+
+</div>
+
+<span class="price">
+$40
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<div>
+
+<h3>
+Beard Trim
+</h3>
+
+<p>
+Shape, trim and finish.
+</p>
+
+</div>
+
+<span class="price">
+$18
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<div>
+
+<h3>
+The Gentleman's Package
+</h3>
+
+<p>
+Haircut, beard, hot towel and styling.
+</p>
+
+</div>
+
+<span class="price">
+$55
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     GALLERY
+============================== -->
+
+<section
+    class="section gallery"
+    id="gallery"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+Our Work
+</span>
+
+<h2>
+Fresh Cuts
+</h2>
+
+</div>
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85"
+alt="Barber haircut"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85"
+alt="Barber shop"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+alt="Barber"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1521490683712-9d7f5e8e8c8a?auto=format&fit=crop&w=900&q=85"
+alt="Haircut"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
+alt="Modern haircut"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=85"
+alt="Barber tools"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     BARBERS
+============================== -->
+
+<section
+    class="section team"
+    id="team"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+The Team
+</span>
+
+<h2>
+Meet The Barbers
+</h2>
+
+<p>
+Experienced hands. Serious about the craft.
+</p>
+
+</div>
+
+
+<div class="team-grid">
+
+
+<div class="barber">
+
+<div class="barber-image">
+
+<img
+src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
+alt="Barber James"
+>
+
+</div>
+
+<div class="barber-info">
+
+<h3>
+James
+</h3>
+
+<span>
+Master Barber
+</span>
+
+<p>
+Classic cuts and precision fades.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="barber">
+
+<div class="barber-image">
+
+<img
+src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=85"
+alt="Barber Marcus"
+>
+
+</div>
+
+<div class="barber-info">
+
+<h3>
+Marcus
+</h3>
+
+<span>
+Senior Barber
+</span>
+
+<p>
+Modern styles and beard grooming.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="barber">
+
+<div class="barber-image">
+
+<img
+src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=900&q=85"
+alt="Barber Daniel"
+>
+
+</div>
+
+<div class="barber-info">
+
+<h3>
+Daniel
+</h3>
+
+<span>
+Barber & Stylist
+</span>
+
+<p>
+Specialist in detailed styling.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     REVIEWS
+============================== -->
+
+<section class="section reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+Client Reviews
+</span>
+
+<h2>
+What Clients Say
+</h2>
+
+</div>
+
+
+<div class="review-grid">
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Best fade I've had in years.
+The barber actually listened to
+what I wanted."
+</p>
+
+<strong>
+— Marcus T.
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Great atmosphere, clean shop
+and excellent service. Definitely
+coming back."
+</p>
+
+<strong>
+— Daniel R.
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"The attention to detail is crazy.
+You can tell these guys take their
+craft seriously."
+</p>
+
+<strong>
+— Chris M.
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     BOOKING
+============================== -->
+
+<section
+    class="section booking"
+    id="booking"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+Reserve Your Chair
+</span>
+
+<h2>
+Book an Appointment
+</h2>
+
+<p>
+Choose your service and preferred time.
+</p>
+
+</div>
+
+
+<div class="booking-box">
+
+<form id="bookingForm">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Name
+</label>
+
+<input
+type="text"
+placeholder="Your name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Phone
+</label>
+
+<input
+type="tel"
+placeholder="Your phone number"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Date
+</label>
+
+<input
+type="date"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Time
+</label>
+
+<select required>
+
+<option value="">
+Choose a time
+</option>
+
+<option>
+10:00 AM
+</option>
+
+<option>
+11:00 AM
+</option>
+
+<option>
+12:00 PM
+</option>
+
+<option>
+1:00 PM
+</option>
+
+<option>
+2:00 PM
+</option>
+
+<option>
+3:00 PM
+</option>
+
+<option>
+4:00 PM
+</option>
+
+<option>
+5:00 PM
+</option>
+
+<option>
+6:00 PM
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Service
+</label>
+
+<select required>
+
+<option value="">
+Choose your service
+</option>
+
+<option>
+Classic Haircut - $25
+</option>
+
+<option>
+Skin Fade - $30
+</option>
+
+<option>
+Beard Grooming - $18
+</option>
+
+<option>
+Haircut + Beard - $40
+</option>
+
+<option>
+Gentleman's Package - $55
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="btn form-submit"
+>
+Request Appointment
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     CONTACT
+============================== -->
+
+<section
+    class="section contact"
+    id="contact"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+Come Through
+</span>
+
+<h2>
+Find The Shop
+</h2>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📍
+</div>
+
+<h3>
+Location
+</h3>
+
+<p>
+25 Main Street<br>
+Downtown District
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📞
+</div>
+
+<h3>
+Phone
+</h3>
+
+<p>
++1 234 567 8900
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-icon">
+🕐
+</div>
+
+<h3>
+Opening Hours
+</h3>
+
+<p>
+Mon - Sat<br>
+9AM - 8PM
+</p>
+
+</div>
+
+
+</div>
+
+
+<div style="
+text-align:center;
+margin-top:40px;
+">
+
+<a
+href="https://maps.google.com"
+target="_blank"
+class="btn"
+>
+Get Directions
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+<h2>
+THE GENTLEMEN'S CUT
+</h2>
+
+<p>
+Premium barbering, timeless style
+and attention to every detail.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Explore
+</h3>
+
+<a href="#about">
+About
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#gallery">
+Gallery
+</a>
+
+<a href="#booking">
+Book
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Contact
+</h3>
+
+<a href="tel:+12345678900">
++1 234 567 8900
+</a>
+
+<a href="mailto:hello@gentlemenscut.example">
+hello@gentlemenscut.example
+</a>
+
+<a href="#contact">
+Find Us
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© <span id="year"></span>
+The Gentlemen's Cut.
+Demo website created for portfolio purposes.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<!-- ==============================
+     WHATSAPP
+============================== -->
+
+<a
+href="https://wa.me/12345678900"
+target="_blank"
+class="whatsapp"
+aria-label="WhatsApp"
+>
+☎
+</a>
+
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuToggle.addEventListener(
+"click",
+function() {
+
+navLinks.classList.toggle("active");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link) {
+
+link.addEventListener(
+"click",
+function() {
+
+navLinks.classList.remove("active");
+
+}
+);
+
+});
+
+
+const bookingForm =
+document.getElementById("bookingForm");
+
+
+bookingForm.addEventListener(
+"submit",
+function(event) {
+
+event.preventDefault();
+
+alert(
+"Thank you! Your appointment request has been received. This is a demo website, so no real appointment was booked."
+);
+
+bookingForm.reset();
+
+}
+);
+
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+</script>
+
+
+</body>
+
+</html>
+

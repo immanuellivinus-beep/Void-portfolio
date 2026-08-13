@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yamaha R3 | Sport Performance</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: white;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: #111;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            color: red;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            text-align: center;
+        }
+
+        .hero-image {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            top: 0;
+            left: 0;
+
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            top: 0;
+            left: 0;
+
+            background-color: rgba(0, 0, 0, 0.62);
+
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            color: red;
+
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 22px;
+
+            color: white;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+            display: inline-block;
+
+            background-color: red;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 14px 30px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: darkred;
+
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+
+            color: red;
+        }
+
+        .section-title p {
+            color: #aaa;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about p {
+            color: #ccc;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           BIKE IMAGE
+        ========================= */
+
+        .gallery {
+            background-color: #090909;
+
+            text-align: center;
+        }
+
+        .bike-image {
+            display: block;
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            height: 500px;
+
+            object-fit: cover;
+
+            margin: auto;
+
+            border-radius: 12px;
+
+            border: 1px solid #333;
+        }
+
+
+        /* =========================
+           SPECIFICATIONS
+        ========================= */
+
+        .specs {
+            background-color: #151515;
+        }
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .card {
+            background-color: #222;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            border: 1px solid #333;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color: red;
+        }
+
+        .card h3 {
+            color: red;
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #bbb;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #bbb;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #050505;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #777;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .bike-image {
+                height: 300px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            R3
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#specs">Specs</a>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+
+        <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1600&q=80"
+            alt="Motorcycle on the road"
+        >
+
+
+        <div class="hero-overlay"></div>
+
+
+        <div class="hero-content">
+
+            <h1>YAMAHA R3</h1>
+
+            <p>
+                Lightweight performance.
+                Aggressive styling.
+                Pure sport-bike character.
+            </p>
+
+            <a
+                href="#specs"
+                class="button"
+            >
+                Explore The R3
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About The R3</h2>
+
+            <p>
+                Lightweight performance in a compact
+                sport-bike package.
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+            <p>
+                The Yamaha R3 is a lightweight sport
+                motorcycle powered by a 321cc twin-cylinder
+                engine. Its compact design, responsive
+                handling and aggressive styling make it
+                a popular entry into the sport-bike world.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section
+        class="gallery"
+        id="gallery"
+    >
+
+        <div class="section-title">
+
+            <h2>Gallery</h2>
+
+            <p>
+                Built for the road.
+            </p>
+
+        </div>
+
+
+        <img
+            class="bike-image"
+            src="https://images.unsplash.com/photo-1558980664-10ea6f0b7be7?auto=format&fit=crop&w=1400&q=80"
+            alt="Sport motorcycle"
+        >
+
+    </section>
+
+
+    <!-- =========================
+         SPECIFICATIONS
+    ========================= -->
+
+    <section
+        class="specs"
+        id="specs"
+    >
+
+        <div class="section-title">
+
+            <h2>Specifications</h2>
+
+            <p>
+                Key characteristics of the R3.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>321cc</h3>
+
+                <p>
+                    Twin-cylinder engine
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>6-Speed</h3>
+
+                <p>
+                    Six-speed transmission
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Sport</h3>
+
+                <p>
+                    Aggressive sport-bike design
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Lightweight</h3>
+
+                <p>
+                    Designed for agile handling
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Twin Cylinder</h3>
+
+                <p>
+                    Parallel-twin engine configuration
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>R-Series</h3>
+
+                <p>
+                    Part of Yamaha's R-Series family
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <div class="section-title">
+
+            <h2>Interested?</h2>
+
+            <p>
+                Explore more about the Yamaha R3.
+            </p>
+
+        </div>
+
+
+        <a
+            class="button"
+            href="https://www.yamaha-motor.com"
+        >
+            Visit Yamaha
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            Yamaha R3 Fan Page
+        </p>
+
+        <p>
+            Built with HTML & CSS
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

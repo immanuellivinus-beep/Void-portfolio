@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Savoré Restaurant - Fine dining, fresh ingredients and unforgettable experiences."
+    >
+
+    <title>Savoré | Modern Dining</title>
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #0d0d0d;
+
+            color: #ffffff;
+
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+
+        /* =========================================
+           VARIABLES
+        ========================================= */
+
+        :root {
+
+            --gold: #d4a84f;
+
+            --gold-light: #f0cc76;
+
+            --dark: #0d0d0d;
+
+            --dark-2: #151515;
+
+            --dark-3: #1d1d1d;
+
+            --text: #ffffff;
+
+            --muted: #aaaaaa;
+
+            --border: rgba(255,255,255,0.12);
+
+            --max-width: 1200px;
+        }
+
+
+        /* =========================================
+           UTILITY
+        ========================================= */
+
+        .container {
+
+            width: 90%;
+
+            max-width: var(--max-width);
+
+            margin: auto;
+        }
+
+        .section {
+
+            padding: 100px 0;
+        }
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .section-heading span {
+
+            color: var(--gold);
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 48px;
+
+            margin-top: 12px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border: 1px solid var(--gold);
+
+            background: var(--gold);
+
+            color: #111;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .btn:hover {
+
+            background: var(--gold-light);
+
+            border-color: var(--gold-light);
+
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+
+            background: transparent;
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+
+            background: var(--gold);
+
+            color: #111;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(10,10,10,0.92);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .navbar {
+
+            min-height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: var(--gold);
+
+            letter-spacing: 2px;
+        }
+
+        .logo small {
+
+            display: block;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 4px;
+
+            text-align: center;
+
+            color: #aaa;
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+
+            font-size: 14px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: #ddd;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+
+            display: none;
+
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.9),
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.75)
+                ),
+                url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .hero-content {
+
+            max-width: 750px;
+
+            padding-top: 70px;
+        }
+
+        .hero-label {
+
+            color: var(--gold);
+
+            text-transform: uppercase;
+
+            letter-spacing: 5px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(55px, 8vw, 100px);
+
+            line-height: 0.95;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 em {
+
+            color: var(--gold);
+
+            font-style: normal;
+        }
+
+        .hero p {
+
+            color: #ddd;
+
+            font-size: 19px;
+
+            max-width: 600px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .scroll-note {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about {
+
+            background: var(--dark);
+        }
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-image {
+
+            min-height: 550px;
+
+            background:
+                url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=85")
+                center/cover;
+
+            position: relative;
+        }
+
+        .about-image::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 20px;
+
+            border: 1px solid var(--gold);
+
+            pointer-events: none;
+        }
+
+        .about-text h2 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+
+            color: var(--gold);
+        }
+
+        .about-text p {
+
+            color: #aaa;
+
+            margin-bottom: 20px;
+        }
+
+        .signature {
+
+            font-family:
+                "Brush Script MT",
+                cursive;
+
+            color: var(--gold);
+
+            font-size: 32px;
+
+            margin-top: 25px;
+        }
+
+
+        /* =========================================
+           FEATURES
+        ========================================= */
+
+        .features {
+
+            background: var(--dark-2);
+        }
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .feature-card {
+
+            padding: 40px 30px;
+
+            background: var(--dark-3);
+
+            border: 1px solid var(--border);
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: var(--gold);
+        }
+
+        .feature-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           MENU
+        ========================================= */
+
+        .menu-section {
+
+            background: var(--dark);
+        }
+
+        .menu-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 50px 80px;
+        }
+
+        .menu-category h3 {
+
+            color: var(--gold);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 28px;
+
+            padding-bottom: 15px;
+
+            border-bottom:
+                1px solid var(--border);
+
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 18px 0;
+
+            border-bottom:
+                1px dashed rgba(255,255,255,0.12);
+        }
+
+        .menu-item h4 {
+
+            font-size: 17px;
+
+            margin-bottom: 5px;
+        }
+
+        .menu-item p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            max-width: 400px;
+        }
+
+        .price {
+
+            color: var(--gold);
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           GALLERY
+        ========================================= */
+
+        .gallery {
+
+            background: var(--dark-2);
+        }
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .gallery-item {
+
+            height: 300px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background: #222;
+        }
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+
+            transform: scale(1.08);
+        }
+
+        .gallery-item:nth-child(1) {
+
+            grid-column: span 2;
+
+            grid-row: span 2;
+
+            height: 615px;
+        }
+
+
+        /* =========================================
+           TESTIMONIALS
+        ========================================= */
+
+        .testimonials {
+
+            background: var(--dark);
+        }
+
+        .testimonial-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .testimonial {
+
+            background: var(--dark-3);
+
+            padding: 35px;
+
+            border: 1px solid var(--border);
+        }
+
+        .stars {
+
+            color: var(--gold);
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+        }
+
+        .testimonial p {
+
+            color: #bbb;
+
+            font-style: italic;
+
+            margin-bottom: 25px;
+        }
+
+        .testimonial strong {
+
+            color: white;
+        }
+
+
+        /* =========================================
+           RESERVATION
+        ========================================= */
+
+        .reservation {
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.8),
+                    rgba(0,0,0,0.8)
+                ),
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=85")
+                center/cover fixed;
+        }
+
+        .reservation-box {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background:
+                rgba(15,15,15,0.92);
+
+            padding: 50px;
+
+            border:
+                1px solid rgba(212,168,79,0.4);
+        }
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+        .form-group.full {
+
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+
+            color: #ccc;
+
+            font-size: 13px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            background: #202020;
+
+            color: white;
+
+            border:
+                1px solid #333;
+
+            padding: 14px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .form-group textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: var(--gold);
+        }
+
+        .form-submit {
+
+            margin-top: 25px;
+
+            width: 100%;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+
+            background: var(--dark-2);
+        }
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .contact-card {
+
+            text-align: center;
+
+            padding: 35px;
+
+            background: var(--dark-3);
+
+            border: 1px solid var(--border);
+        }
+
+        .contact-card .icon {
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+
+            color: var(--gold);
+
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+
+            color: #aaa;
+        }
+
+
+        /* =========================================
+           WHATSAPP
+        ========================================= */
+
+        .whatsapp {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: #25D366;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+
+            z-index: 2000;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.4);
+
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+
+            transform: scale(1.1);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background: #080808;
+
+            padding: 60px 0 25px;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr;
+
+            gap: 50px;
+
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h2 {
+
+            color: var(--gold);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+
+            color: #777;
+
+            max-width: 400px;
+        }
+
+        .footer-column h3 {
+
+            margin-bottom: 15px;
+
+            color: white;
+        }
+
+        .footer-column a {
+
+            display: block;
+
+            color: #777;
+
+            margin-bottom: 8px;
+
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+
+            color: var(--gold);
+        }
+
+        .copyright {
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid var(--border);
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .menu-toggle {
+
+                display: block;
+            }
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 78px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #111;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                padding: 10px 0;
+
+                display: none;
+            }
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+            .nav-links li {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+            .nav-links a {
+
+                display: block;
+
+                padding: 14px;
+            }
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+
+                min-height: 400px;
+            }
+
+            .feature-grid,
+            .testimonial-grid,
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .menu-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item:nth-child(1) {
+
+                grid-column: span 2;
+
+                height: 400px;
+            }
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .section {
+
+                padding: 75px 0;
+            }
+
+            .section-heading h2 {
+
+                font-size: 36px;
+            }
+
+            .hero {
+
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+
+                font-size: 58px;
+            }
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .hero-buttons .btn {
+
+                text-align: center;
+            }
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item,
+            .gallery-item:nth-child(1) {
+
+                grid-column: span 1;
+
+                grid-row: span 1;
+
+                height: 300px;
+            }
+
+            .reservation-box {
+
+                padding: 25px 20px;
+            }
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+
+                grid-column: auto;
+            }
+
+            .logo {
+
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <a
+                href="#home"
+                class="logo"
+            >
+
+                SAVORÉ
+
+                <small>
+                    MODERN DINING
+                </small>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+
+                <li>
+                    <a href="#gallery">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="#reservation">Reservations</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="container hero-content">
+
+                <div class="hero-label">
+                    Welcome to Savoré
+                </div>
+
+                <h1>
+                    Taste the
+                    <em>Extraordinary.</em>
+                </h1>
+
+                <p>
+                    A modern dining experience built around
+                    fresh ingredients, bold flavors and
+                    unforgettable moments.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#menu"
+                        class="btn"
+                    >
+                        Explore Menu
+                    </a>
+
+                    <a
+                        href="#reservation"
+                        class="btn btn-outline"
+                    >
+                        Reserve a Table
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="scroll-note">
+                Scroll to explore
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ABOUT
+        ====================================== -->
+
+        <section
+            class="section about"
+            id="about"
+        >
+
+            <div class="container about-grid">
+
+
+                <div class="about-image"></div>
+
+
+                <div class="about-text">
+
+                    <div class="section-heading"
+                         style="text-align:left; margin-bottom:25px;">
+
+                        <span>
+                            Our Story
+                        </span>
+
+                        <h2>
+                            Food made with
+                            <span>purpose.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        Savoré was created from a simple idea:
+                        great food should bring people together.
+                    </p>
+
+                    <p>
+                        Our kitchen combines locally sourced
+                        ingredients with modern techniques to
+                        create dishes that feel familiar,
+                        exciting and completely our own.
+                    </p>
+
+                    <p>
+                        From a quick lunch to a special evening,
+                        every plate is prepared with attention
+                        to detail.
+                    </p>
+
+
+                    <div class="signature">
+                        Savoré Kitchen
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FEATURES
+        ====================================== -->
+
+        <section class="section features">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        The Savoré Experience
+                    </span>
+
+                    <h2>
+                        More Than Dinner
+                    </h2>
+
+                    <p>
+                        Everything is designed around
+                        great food and even better moments.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🍽️
+                        </div>
+
+                        <h3>
+                            Fresh Ingredients
+                        </h3>
+
+                        <p>
+                            Carefully selected ingredients
+                            prepared fresh for every service.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            👨‍🍳
+                        </div>
+
+                        <h3>
+                            Crafted by Chefs
+                        </h3>
+
+                        <p>
+                            Thoughtfully designed dishes
+                            made with creativity and care.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🥂
+                        </div>
+
+                        <h3>
+                            Great Atmosphere
+                        </h3>
+
+                        <p>
+                            A warm environment for dates,
+                            celebrations and casual dining.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MENU
+        ====================================== -->
+
+        <section
+            class="section menu-section"
+            id="menu"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        From Our Kitchen
+                    </span>
+
+                    <h2>
+                        Signature Menu
+                    </h2>
+
+                    <p>
+                        A selection of customer favorites
+                        and seasonal creations.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-grid">
+
+
+                    <!-- STARTERS -->
+
+                    <div class="menu-category">
+
+                        <h3>
+                            Starters
+                        </h3>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Crispy Calamari
+                                </h4>
+
+                                <p>
+                                    Lemon, herbs and house aioli.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $12
+                            </span>
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Truffle Fries
+                                </h4>
+
+                                <p>
+                                    Parmesan, herbs and truffle oil.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $9
+                            </span>
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Garlic Prawns
+                                </h4>
+
+                                <p>
+                                    Sautéed prawns with garlic butter.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $14
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MAIN -->
+
+                    <div class="menu-category">
+
+                        <h3>
+                            Main Course
+                        </h3>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Grilled Ribeye
+                                </h4>
+
+                                <p>
+                                    Charred vegetables and pepper sauce.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $28
+                            </span>
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Creamy Garlic Pasta
+                                </h4>
+
+                                <p>
+                                    Parmesan, garlic, herbs and chicken.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $19
+                            </span>
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Atlantic Salmon
+                                </h4>
+
+                                <p>
+                                    Roasted potatoes and lemon butter.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $25
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BURGERS -->
+
+                    <div class="menu-category">
+
+                        <h3>
+                            Savoré Burgers
+                        </h3>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Signature Burger
+                                </h4>
+
+                                <p>
+                                    Beef, cheddar, caramelized onions
+                                    and house sauce.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $16
+                            </span>
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Crispy Chicken Burger
+                                </h4>
+
+                                <p>
+                                    Crispy chicken, lettuce,
+                                    tomato and spicy mayo.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $15
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DESSERT -->
+
+                    <div class="menu-category">
+
+                        <h3>
+                            Desserts
+                        </h3>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Chocolate Fondant
+                                </h4>
+
+                                <p>
+                                    Warm chocolate cake and vanilla ice cream.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $10
+                            </span>
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <div>
+
+                                <h4>
+                                    Classic Cheesecake
+                                </h4>
+
+                                <p>
+                                    Creamy cheesecake with berry compote.
+                                </p>
+
+                            </div>
+
+                            <span class="price">
+                                $8
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GALLERY
+        ====================================== -->
+
+        <section
+            class="section gallery"
+            id="gallery"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Take a Look
+                    </span>
+
+                    <h2>
+                        Inside Savoré
+                    </h2>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+                            alt="Restaurant interior"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=85"
+                            alt="Prepared restaurant dish"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+                            alt="Fresh food"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=85"
+                            alt="Restaurant dining"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=85"
+                            alt="Pizza"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             TESTIMONIALS
+        ====================================== -->
+
+        <section class="section testimonials">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Guest Reviews
+                    </span>
+
+                    <h2>
+                        What People Say
+                    </h2>
+
+                </div>
+
+
+                <div class="testimonial-grid">
+
+
+                    <div class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            "The food was incredible and
+                            the atmosphere was exactly what
+                            we were looking for."
+                        </p>
+
+                        <strong>
+                            — Sarah M.
+                        </strong>
+
+                    </div>
+
+
+                    <div class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            "Beautiful restaurant, friendly
+                            staff and some of the best pasta
+                            I've had in a long time."
+                        </p>
+
+                        <strong>
+                            — Daniel K.
+                        </strong>
+
+                    </div>
+
+
+                    <div class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            "Perfect place for a date night.
+                            The service was excellent."
+                        </p>
+
+                        <strong>
+                            — Michael T.
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             RESERVATION
+        ====================================== -->
+
+        <section
+            class="section reservation"
+            id="reservation"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <span>
+                        Your Table Awaits
+                    </span>
+
+                    <h2>
+                        Make a Reservation
+                    </h2>
+
+                    <p>
+                        Reserve your table and let us
+                        take care of the rest.
+                    </p>
+
+                </div>
+
+
+                <div class="reservation-box">
+
+
+                    <form
+                        id="reservationForm"
+                    >
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Your name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Phone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    placeholder="Your phone number"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Time
+                                </label>
+
+                                <select required>
+
+                                    <option value="">
+                                        Select time
+                                    </option>
+
+                                    <option>
+                                        5:00 PM
+                                    </option>
+
+                                    <option>
+                                        6:00 PM
+                                    </option>
+
+                                    <option>
+                                        7:00 PM
+                                    </option>
+
+                                    <option>
+                                        8:00 PM
+                                    </option>
+
+                                    <option>
+                                        9:00 PM
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Guests
+                                </label>
+
+                                <select required>
+
+                                    <option value="">
+                                        Number of guests
+                                    </option>
+
+                                    <option>
+                                        1
+                                    </option>
+
+                                    <option>
+                                        2
+                                    </option>
+
+                                    <option>
+                                        3
+                                    </option>
+
+                                    <option>
+                                        4
+                                    </option>
+
+                                    <option>
+                                        5+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Occasion
+                                </label>
+
+                                <select>
+
+                                    <option>
+                                        No special occasion
+                                    </option>
+
+                                    <option>
+                                        Birthday
+                                    </option>
+
+                                    <option>
+                                        Anniversary
+                                    </option>
+
+                                    <option>
+                                        Date Night
+                                    </option>
+
+                                    <option>
+                                        Business Dinner
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label>
+                                    Special Request
+                                </label>
+
+                                <textarea
+                                    placeholder="Anything we should know?"
+                                ></textarea>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn form-submit"
+                        >
+                            Request Reservation
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTACT
+        ====================================== -->
+
+        <section
+            class="section contact"
+            id="contact"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <span>
+                        Come Visit
+                    </span>
+
+                    <h2>
+                        Find Us
+                    </h2>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-card">
+
+                        <div class="icon">
+                            📍
+                        </div>
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <p>
+                            25 Main Street<br>
+                            Downtown District
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-card">
+
+                        <div class="icon">
+                            📞
+                        </div>
+
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <p>
+                            +1 234 567 8900
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-card">
+
+                        <div class="icon">
+                            🕐
+                        </div>
+
+                        <h3>
+                            Opening Hours
+                        </h3>
+
+                        <p>
+                            Mon - Thu: 11AM - 10PM<br>
+                            Fri - Sun: 11AM - 11PM
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div
+                    style="
+                        text-align:center;
+                        margin-top:40px;
+                    "
+                >
+
+                    <a
+                        href="https://maps.google.com"
+                        target="_blank"
+                        class="btn"
+                    >
+                        Get Directions
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <h2>
+                        SAVORÉ
+                    </h2>
+
+                    <p>
+                        Modern dining, memorable moments
+                        and food worth coming back for.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Explore
+                    </h3>
+
+                    <a href="#about">
+                        About
+                    </a>
+
+                    <a href="#menu">
+                        Menu
+                    </a>
+
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+
+                    <a href="#reservation">
+                        Reservations
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <a href="tel:+12345678900">
+                        +1 234 567 8900
+                    </a>
+
+                    <a href="mailto:hello@savore.example">
+                        hello@savore.example
+                    </a>
+
+                    <a href="#contact">
+                        Find Us
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="copyright">
+
+                © <span id="year"></span>
+                Savoré Restaurant.
+                Demo website created for portfolio purposes.
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         WHATSAPP
+    ========================================= -->
+
+    <a
+        href="https://wa.me/12345678900"
+        class="whatsapp"
+        target="_blank"
+        aria-label="Chat on WhatsApp"
+    >
+        ☎
+    </a>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        /* Mobile menu */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        /* Close mobile menu after clicking */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* Demo reservation form */
+
+        const reservationForm =
+            document.getElementById(
+                "reservationForm"
+            );
+
+
+        reservationForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Thank you! Your reservation request has been received. This is a demo website, so no real reservation was submitted."
+                );
+
+                reservationForm.reset();
+
+            }
+        );
+
+
+        /* Current year */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+    </script>
+
+
+</body>
+
+</html>

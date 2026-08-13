@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Savoré Restaurant - Fine dining, handcrafted dishes and unforgettable evenings."
+    >
+
+    <title>Savoré | Restaurant</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background: #0d0d0d;
+            color: #f5f1e8;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1150px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background:
+                rgba(13, 13, 13, 0.92);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d5a85c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #ddd;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d5a85c;
+        }
+
+        .nav-button {
+            background: #d5a85c;
+            color: #111;
+
+            padding: 11px 18px;
+
+            border-radius: 4px;
+
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            background: #e4bd78;
+        }
+
+        .menu-toggle {
+            display: none;
+
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.62),
+                    rgba(0,0,0,0.75)
+                ),
+                url(
+                    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85"
+                );
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding-top: 70px;
+        }
+
+        .eyebrow {
+            color: #d5a85c;
+
+            font-family: Arial, sans-serif;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 92px);
+
+            line-height: 0.98;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d5a85c;
+        }
+
+        .hero p {
+            max-width: 560px;
+
+            color: #d2d2d2;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            border-radius: 4px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: #d5a85c;
+            color: #111;
+        }
+
+        .button-primary:hover {
+            background: #e5bf7d;
+            transform: translateY(-3px);
+        }
+
+        .button-outline {
+            border:
+                1px solid rgba(255,255,255,0.4);
+
+            color: white;
+        }
+
+        .button-outline:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* =========================
+           SECTION GENERAL
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: #d5a85c;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            color: #aaa;
+
+            font-family: Arial, sans-serif;
+
+            max-width: 600px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #131313;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            height: 550px;
+
+            object-fit: cover;
+
+            border-radius: 3px;
+        }
+
+        .about-text p {
+            color: #aaa;
+
+            font-family: Arial, sans-serif;
+
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 30px;
+
+            color: #d5a85c;
+
+            font-size: 22px;
+
+            font-style: italic;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu-section {
+            background: #0d0d0d;
+        }
+
+        .menu-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin:
+                0 auto 60px;
+        }
+
+        .menu-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px 60px;
+        }
+
+        .menu-item {
+            padding-bottom: 22px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.1);
+        }
+
+        .menu-item-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .menu-item h3 {
+            font-size: 21px;
+        }
+
+        .price {
+            color: #d5a85c;
+
+            font-size: 18px;
+
+            white-space: nowrap;
+        }
+
+        .menu-item p {
+            color: #888;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            margin-top: 8px;
+        }
+
+        /* =========================
+           FEATURE
+        ========================= */
+
+        .feature {
+            min-height: 480px;
+
+            display: flex;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.68),
+                    rgba(0,0,0,0.7)
+                ),
+                url(
+                    "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85"
+                );
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .feature-content {
+            max-width: 650px;
+        }
+
+        .feature h2 {
+            font-size:
+                clamp(38px, 6vw, 68px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+        .feature p {
+            font-family: Arial, sans-serif;
+
+            color: #ccc;
+
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            background: #131313;
+        }
+
+        .gallery-heading {
+            margin-bottom: 45px;
+        }
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .gallery-grid img {
+            height: 320px;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* =========================
+           RESERVATION
+        ========================= */
+
+        .reservation {
+            background: #0d0d0d;
+        }
+
+        .reservation-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(213,168,92,0.3);
+
+            padding: 65px 35px;
+        }
+
+        .reservation-box p {
+            color: #aaa;
+
+            font-family: Arial, sans-serif;
+
+            margin:
+                0 auto 30px;
+
+            max-width: 600px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #131313;
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+        .contact-card {
+            padding: 30px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        .contact-card h3 {
+            color: #d5a85c;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+            color: #aaa;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #080808;
+
+            padding: 50px 0 25px;
+
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #d5a85c;
+        }
+
+        footer p {
+            color: #777;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            margin: 25px 0;
+        }
+
+        .footer-links a {
+            color: #999;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: #d5a85c;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #25d366;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 30px
+                rgba(0,0,0,0.4);
+
+            z-index: 999;
+
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links,
+            .nav-button {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 54px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .about-image {
+                height: 420px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid img {
+                height: 220px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            nav {
+                height: 68px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 280px;
+            }
+
+            .reservation-box {
+                padding: 45px 20px;
+            }
+
+            .whatsapp {
+                width: 52px;
+                height: 52px;
+
+                right: 16px;
+                bottom: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <a
+                    href="#home"
+                    class="logo"
+                >
+                    Savor<span>é</span>
+                </a>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            Our Story
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#menu">
+                            Menu
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#gallery">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <a
+                    href="#reservation"
+                    class="nav-button"
+                >
+                    RESERVE A TABLE
+                </a>
+
+                <div
+                    class="menu-toggle"
+                    onclick="toggleMenu()"
+                >
+                    ☰
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        Est. 2014 • Dallas
+                    </div>
+
+                    <h1>
+                        Food worth
+                        <span>remembering.</span>
+                    </h1>
+
+                    <p>
+                        Seasonal ingredients,
+                        thoughtful cooking,
+                        and an atmosphere
+                        designed for unforgettable
+                        evenings.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#menu"
+                            class="button button-primary"
+                        >
+                            EXPLORE OUR MENU
+                        </a>
+
+                        <a
+                            href="#reservation"
+                            class="button button-outline"
+                        >
+                            BOOK A TABLE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            class="about"
+            id="about"
+        >
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <img
+                        class="about-image"
+                        src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=85"
+                        alt="Restaurant interior"
+                    >
+
+                    <div class="about-text">
+
+                        <div class="section-label">
+                            Our Story
+                        </div>
+
+                        <h2 class="section-title">
+                            Simple ingredients.
+                            Serious flavor.
+                        </h2>
+
+                        <p>
+                            Savoré was created around
+                            one simple belief:
+                            exceptional food doesn't
+                            need to be complicated.
+                        </p>
+
+                        <p>
+                            Our kitchen works with
+                            seasonal produce,
+                            carefully selected
+                            ingredients and recipes
+                            inspired by modern
+                            European cooking.
+                        </p>
+
+                        <p>
+                            Every plate is prepared
+                            with intention, from the
+                            first ingredient to the
+                            final garnish.
+                        </p>
+
+                        <div class="signature">
+                            — The Savoré Team
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MENU
+        ========================== -->
+
+        <section
+            class="menu-section"
+            id="menu"
+        >
+
+            <div class="container">
+
+                <div class="menu-heading">
+
+                    <div class="section-label">
+                        From Our Kitchen
+                    </div>
+
+                    <h2 class="section-title">
+                        The Menu
+                    </h2>
+
+                    <p class="section-description">
+                        A small selection of dishes
+                        created around the best
+                        ingredients of the season.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-grid">
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h3>
+                                Truffle Burrata
+                            </h3>
+
+                            <span class="price">
+                                $18
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Creamy burrata,
+                            shaved truffle,
+                            grilled sourdough.
+                        </p>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h3>
+                                Wild Mushroom Risotto
+                            </h3>
+
+                            <span class="price">
+                                $24
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Arborio rice,
+                            wild mushrooms,
+                            parmesan and herbs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h3>
+                                Seared Salmon
+                            </h3>
+
+                            <span class="price">
+                                $29
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Atlantic salmon,
+                            lemon beurre blanc,
+                            seasonal vegetables.
+                        </p>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h3>
+                                Braised Short Rib
+                            </h3>
+
+                            <span class="price">
+                                $34
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Slow-braised beef,
+                            roasted garlic,
+                            red wine reduction.
+                        </p>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h3>
+                                Herb Roasted Chicken
+                            </h3>
+
+                            <span class="price">
+                                $26
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Free-range chicken,
+                            rosemary jus,
+                            crispy potatoes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h3>
+                                Savoré Chocolate Tart
+                            </h3>
+
+                            <span class="price">
+                                $12
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Dark chocolate,
+                            sea salt,
+                            vanilla cream.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURE
+        ========================== -->
+
+        <section class="feature">
+
+            <div class="container">
+
+                <div class="feature-content">
+
+                    <div class="section-label">
+                        The Experience
+                    </div>
+
+                    <h2>
+                        Dinner should feel
+                        like an occasion.
+                    </h2>
+
+                    <p>
+                        From intimate dinners to
+                        celebrations with friends,
+                        every evening at Savoré is
+                        designed to be remembered.
+                    </p>
+
+                    <a
+                        href="#reservation"
+                        class="button button-primary"
+                    >
+                        PLAN YOUR EVENING
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALLERY
+        ========================== -->
+
+        <section
+            class="gallery"
+            id="gallery"
+        >
+
+            <div class="container">
+
+                <div class="gallery-heading">
+
+                    <div class="section-label">
+                        A Taste Of Savoré
+                    </div>
+
+                    <h2 class="section-title">
+                        Inside the Experience
+                    </h2>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85"
+                        alt="Restaurant dish"
+                    >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=900&q=85"
+                        alt="Restaurant table"
+                    >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85"
+                        alt="Restaurant dining"
+                    >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
+                        alt="Restaurant interior"
+                    >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85"
+                        alt="Prepared meal"
+                    >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85"
+                        alt="Fine dining"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESERVATION
+        ========================== -->
+
+        <section
+            class="reservation"
+            id="reservation"
+        >
+
+            <div class="container">
+
+                <div class="reservation-box">
+
+                    <div class="section-label">
+                        Your Table Awaits
+                    </div>
+
+                    <h2 class="section-title">
+                        Make an evening of it.
+                    </h2>
+
+                    <p>
+                        Reserve your table and let
+                        us take care of the rest.
+                    </p>
+
+                    <a
+                        href="tel:+12145551234"
+                        class="button button-primary"
+                    >
+                        CALL TO RESERVE
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section
+            class="contact"
+            id="contact"
+        >
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+                    <div class="contact-card">
+
+                        <h3>
+                            Visit Us
+                        </h3>
+
+                        <p>
+                            123 Main Street<br>
+                            Dallas, TX 75201
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-card">
+
+                        <h3>
+                            Opening Hours
+                        </h3>
+
+                        <p>
+                            Monday – Thursday<br>
+                            11:30 AM – 10:00 PM
+                            <br><br>
+
+                            Friday – Saturday<br>
+                            11:30 AM – 11:00 PM
+                            <br><br>
+
+                            Sunday<br>
+                            12:00 PM – 9:00 PM
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-card">
+
+                        <h3>
+                            Contact
+                        </h3>
+
+                        <p>
+                            (214) 555-1234
+                            <br><br>
+
+                            hello@savore.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-logo">
+                Savor<span>é</span>
+            </div>
+
+            <p>
+                Good food. Good company.
+                Great evenings.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#reservation">
+                    Reservations
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+            <p>
+                © 2026 Savoré Restaurant.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         WHATSAPP
+    ========================== -->
+
+    <a
+        href="https://wa.me/2349122229448?text=Hello%20Savor%C3%A9%2C%20I%27d%20like%20to%20make%20a%20reservation."
+        class="whatsapp"
+        aria-label="WhatsApp"
+    >
+        WA
+    </a>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const links =
+                document.querySelector(
+                    ".nav-links"
+                );
+
+            if (
+                links.style.display ===
+                "flex"
+            ) {
+
+                links.style.display =
+                    "none";
+
+            } else {
+
+                links.style.display =
+                    "flex";
+
+                links.style.flexDirection =
+                    "column";
+
+                links.style.position =
+                    "absolute";
+
+                links.style.top =
+                    "78px";
+
+                links.style.left =
+                    "0";
+
+                links.style.width =
+                    "100%";
+
+                links.style.padding =
+                    "25px";
+
+                links.style.background =
+                    "#0d0d0d";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
